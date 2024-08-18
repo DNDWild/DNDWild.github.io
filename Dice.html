@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Store</title>
+<link rel="icon" type="image/x-icon" href="../../amog me emote.png">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+
+
+
+
+/*                                         STORE                             */
+* {
+  box-sizing: border-box;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #1f1f1f;
+}
+
+h1 {
+	text-align:center;
+}
+h2 {
+	text-align:center;
+}
+h3 {
+	text-align:center;
+}
+p {
+color: lightgray;
+}
+
+/* Style the top navigation bar */
+.topnav {
+  overflow: hidden;
+  background-color: #333;
+}
+
+/* Style the topnav links */
+.topnav a {
+  float: left;
+  display: block;
+  color: #f2f2f2;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+/* Change color on hover */
+.topnav a:hover {
+  background-color: #ddd;
+  color: black;
+}
+
+/* Style the content */
+.content {
+  background-color: #1f1f1f;
+  color: lightgray;
+  padding: 10px;
+}
+
+/* Style the footer */
+.footer {
+  background-color: #f1f1f1;
+  padding: 10px;
+}
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+.centerC {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+  text-align: center;
+}
+#rightA {
+	text-align: right;
+}
+
+.container {
+	width: auto;
+    white-space: pre-wrap;
+}
+
+</style>
+</head>
+<body>
+
+<div class="topnav">
+  <a href="../">Back</a>
+  <div id = rightA>
+  <img src="../../CyberpunkWildLogo.png" style="width:100px">
+  </div>
+</div>
+
+<div class="content">
+    <input type="number" id="numberInput" placeholder="Enter a number">
+    <button id="generateButton">Roll D10</button>
+    <p id="result"></p>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const numberInput = document.getElementById("numberInput");
+            const generateButton = document.getElementById("generateButton");
+            const resultElement = document.getElementById("result");
+
+            generateButton.addEventListener("click", function() {
+                const inputNumber = parseFloat(numberInput.value);
+                if (!isNaN(inputNumber)) {
+                    let sum = 0;
+                    for (let i = 0; i < inputNumber; i++) {
+                        const randomNumber = Math.floor(Math.random() * 10) + 1;
+                        sum += randomNumber;
+                    }
+                    resultElement.textContent = `Sum of ${inputNumber} random numbers: ${sum}`;
+                } else {
+                    resultElement.textContent = "Please enter a valid number.";
+                }
+            });
+        });
+    </script>
+  
+</div>
+</body>
+</html>
+
+
